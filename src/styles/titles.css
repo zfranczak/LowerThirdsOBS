@@ -1,0 +1,18 @@
+.grid-container {
+  display: grid;
+  gap: 8px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title-container label {
+  align-self: flex-start;
+}
+
+.title-container input {
+  width: 250px;
+}
