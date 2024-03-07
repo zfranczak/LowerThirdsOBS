@@ -1,6 +1,6 @@
 import './App.css';
 
-function App() {
+function Controls() {
   return (
     <>
       <h1>Lower Thirds for OBS</h1>
@@ -8,4 +8,4 @@ function App() {
   );
 }
 
-export default App;
+export default Controls;
