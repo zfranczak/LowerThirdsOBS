@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/titles.css';
 
-const Titles = () => {
-  const [title, setTitle] = useState('');
-  const [subtitle, setSubtitle] = useState('');
-
-  const handleTitleChange = (e) => {
-    setTitle(e.target.value);
-  };
-
-  const handleSubtitleChange = (e) => {
-    setSubtitle(e.target.value);
-  };
-
+const Titles = ({ handleTitleChange, handleSubtitleChange }) => {
   return (
     <div className='grid-container'>
       <div className='title-container'>
         <label>
-          Title:
-          <input type='text' value={title} onChange={handleTitleChange} />
+          <input
+            type='text'
+            onChange={(e) => handleTitleChange(e.target.value)}
+          />
         </label>
       </div>
       <div className='title-container'>
         <label>
-          Subtitle:
-          <input type='text' value={subtitle} onChange={handleSubtitleChange} />
+          <input
+            type='text'
+            onChange={(e) => handleSubtitleChange(e.target.value)}
+          />
         </label>
       </div>
     </div>
