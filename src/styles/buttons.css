@@ -1,0 +1,13 @@
+.increment-decrement-input-button {
+  display: flex;
+  align-items: center;
+  margin: 5px 10px 0 0;
+}
+
+.icon {
+  margin-right: 5px; /* Adjust the margin as needed */
+}
+
+.input-field {
+  max-width: 40px; /* Adjust the width as needed */
+}

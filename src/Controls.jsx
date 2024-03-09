@@ -3,6 +3,8 @@ import Titles from './buttons/Titles';
 import Button from './buttons/Button';
 import './controls.css';
 import LowerThirds from './LowerThirds';
+import { RxFontSize } from 'react-icons/rx';
+import { RxSize } from 'react-icons/rx';
 
 function Controls() {
   const [textSize, setTextSize] = useState(16);
@@ -10,14 +12,6 @@ function Controls() {
   const [displayText, setDisplayText] = useState('Initial Text');
   const [title, setTitle] = useState(''); // Add state for title
   const [subtitle, setSubtitle] = useState(''); // Add state for subtitle
-
-  const handleTextSize = () => {
-    setTextSize((prevSize) => prevSize + 2);
-  };
-
-  const handleTextPadding = () => {
-    setTextPadding((prevPadding) => prevPadding + 5);
-  };
 
   // Function to handle title change
   const handleTitleChange = (newTitle) => {
@@ -40,11 +34,12 @@ function Controls() {
         handleTitleChange={handleTitleChange}
         handleSubtitleChange={handleSubtitleChange}
       />
-      <Button buttonText='Increase Text Size' updateText={handleTextSize} />
-      <Button
-        buttonText='Increase Text Padding'
-        updateText={handleTextPadding}
-      />
+      <div className='row-1'>
+        <Button IconComponent={RxFontSize} />
+        <Button IconComponent={RxSize} />
+        <Button IconComponent={RxSize} />
+        <Button IconComponent={RxSize} />
+      </div>
       <LowerThirds title={title} subtitle={subtitle} />
     </>
   );
