@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/buttons.css';
 
-const Button = ({ IconComponent, initialValue }) => {
+const Button = ({ IconComponent, initialValue, tooltip }) => {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (e) => {
@@ -10,7 +10,7 @@ const Button = ({ IconComponent, initialValue }) => {
   };
 
   return (
-    <div className='increment-decrement-input-button'>
+    <div className='increment-decrement-input-button' title={tooltip}>
       <div>{IconComponent && <IconComponent className='icon' />}</div>
       <input
         className='input-field'

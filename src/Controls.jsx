@@ -3,8 +3,22 @@ import Titles from './buttons/Titles';
 import Button from './buttons/Button';
 import './controls.css';
 import LowerThirds from './LowerThirds';
-import { RxFontSize } from 'react-icons/rx';
-import { RxSize } from 'react-icons/rx';
+import Justify from './buttons/Justify';
+
+{
+  /*Icons*/
+}
+
+import {
+  RxFontSize,
+  RxSize,
+  RxCornerTopLeft,
+  RxRowSpacing,
+  RxShadow,
+  RxBorderWidth,
+  RxAspectRatio,
+  RxMoon,
+} from 'react-icons/rx';
 
 function Controls() {
   const [textSize, setTextSize] = useState(16);
@@ -25,7 +39,23 @@ function Controls() {
 
   return (
     <>
-      <h1>Lower Thirds for OBS</h1>
+      <h2>Lower Thirds for OBS</h2>
+
+      <div className='row row-1'>
+        <Button IconComponent={RxSize} tooltip='Size for Lower Third' />
+        <Button IconComponent={RxFontSize} tooltip='Ratio between text sizes' />
+        <Button IconComponent={RxRowSpacing} tooltip='Space Between Text' />
+        <Button IconComponent={RxShadow} tooltip='Shadows' />
+      </div>
+      <div className='row row-2'>
+        <Button IconComponent={RxCornerTopLeft} tooltip='Rounded Corners' />
+        <Button IconComponent={RxBorderWidth} tooltip='Border Thickness' />
+        <Button IconComponent={RxAspectRatio} tooltip='Logo Size' />
+        <Button IconComponent={RxMoon} tooltip='Lower Thirds Style' />
+      </div>
+      <div className='row row-3'>
+        <Justify />
+      </div>
       <Titles
         textSize={textSize}
         textPadding={textPadding}
@@ -34,12 +64,6 @@ function Controls() {
         handleTitleChange={handleTitleChange}
         handleSubtitleChange={handleSubtitleChange}
       />
-      <div className='row-1'>
-        <Button IconComponent={RxFontSize} />
-        <Button IconComponent={RxSize} />
-        <Button IconComponent={RxSize} />
-        <Button IconComponent={RxSize} />
-      </div>
       <LowerThirds title={title} subtitle={subtitle} />
     </>
   );
