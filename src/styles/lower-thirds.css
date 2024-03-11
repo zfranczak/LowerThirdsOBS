@@ -1,0 +1,76 @@
+.container {
+  font-family: 'Anta', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.animation {
+  width: 20em;
+  height: 4em;
+  margin: 1em auto;
+  position: relative;
+}
+
+.mask {
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes animation-1-title {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  30% {
+    transform: translate3d(0, 100%, 0);
+  }
+  60% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes animation-1-subtitle {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  30% {
+    transform: translate3d(0, -100%, 0);
+  }
+  60% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#animation-1 {
+  text-align: left;
+}
+
+#animation-1 > div {
+  width: 100%;
+  height: 1em;
+}
+
+#animation-1 > div > div {
+  position: absolute;
+  width: 100%;
+}
+
+#animation-1 > div:first-child {
+  font-size: 2.8em;
+}
+
+#animation-1 > div:first-child > div {
+  animation: 3s ease-out infinite alternate both animation-1-title;
+}
+
+#animation-1 > div:last-child {
+  font-size: 1.1em;
+}
+
+#animation-1 > div:last-child > div {
+  animation: 3s ease-out infinite alternate both animation-1-subtitle;
+}
