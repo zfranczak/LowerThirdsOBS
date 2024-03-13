@@ -4,6 +4,7 @@ import Button from './buttons/Button';
 import './controls.css';
 import LowerThirds from './LowerThirds';
 import Justify from './buttons/Justify';
+import { useGlobalContext } from './GlobalContext';
 
 {
   /*Icons*/
@@ -21,21 +22,11 @@ import {
 } from 'react-icons/rx';
 
 function Controls() {
+  const { title, updateTitle, subtitle, updateSubtitle } = useGlobalContext();
+
   const [textSize, setTextSize] = useState(16);
   const [textPadding, setTextPadding] = useState(10);
   const [displayText, setDisplayText] = useState('Initial Text');
-  const [title, setTitle] = useState(''); // Add state for title
-  const [subtitle, setSubtitle] = useState(''); // Add state for subtitle
-
-  // Function to handle title change
-  const handleTitleChange = (newTitle) => {
-    setTitle(newTitle);
-  };
-
-  // Function to handle subtitle change
-  const handleSubtitleChange = (newSubtitle) => {
-    setSubtitle(newSubtitle);
-  };
 
   return (
     <>
@@ -64,9 +55,6 @@ function Controls() {
           textSize={textSize}
           textPadding={textPadding}
           displayText={displayText}
-          // Pass the functions to update title and subtitle
-          handleTitleChange={handleTitleChange}
-          handleSubtitleChange={handleSubtitleChange}
         />
       </div>
       <LowerThirds title={title} subtitle={subtitle} />

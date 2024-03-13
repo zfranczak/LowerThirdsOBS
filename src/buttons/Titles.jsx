@@ -1,7 +1,10 @@
 import React from 'react';
+import { useGlobalContext } from '../GlobalContext';
 import '../styles/titles.css';
 
-const Titles = ({ handleTitleChange, handleSubtitleChange }) => {
+const Titles = () => {
+  const { updateTitle, updateSubtitle } = useGlobalContext();
+
   return (
     <div className='grid-container'>
       <div className='title-container' title='Title'>
@@ -9,7 +12,7 @@ const Titles = ({ handleTitleChange, handleSubtitleChange }) => {
           <input
             type='text'
             placeholder='Title'
-            onChange={(e) => handleTitleChange(e.target.value)}
+            onChange={(e) => updateTitle(e.target.value)}
           />
         </label>
       </div>
@@ -18,7 +21,7 @@ const Titles = ({ handleTitleChange, handleSubtitleChange }) => {
           <input
             type='text'
             placeholder='Subtitle'
-            onChange={(e) => handleSubtitleChange(e.target.value)}
+            onChange={(e) => updateSubtitle(e.target.value)}
           />
         </label>
       </div>
