@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Titles from './buttons/Titles';
 import Button from './buttons/Button';
 import './controls.css';
-import LowerThirds from './LowerThirds';
+
 import Justify from './buttons/Justify';
 import { useGlobalContext } from './GlobalContext';
 
@@ -20,6 +20,7 @@ import {
   RxAspectRatio,
   RxMoon,
 } from 'react-icons/rx';
+import LowerThirds from './LowerThirds';
 
 function Controls() {
   const { title, updateTitle, subtitle, updateSubtitle } = useGlobalContext();
@@ -57,7 +58,7 @@ function Controls() {
           displayText={displayText}
         />
       </div>
-      <LowerThirds title={title} subtitle={subtitle} />
+      <LowerThirds />
     </>
   );
 }
